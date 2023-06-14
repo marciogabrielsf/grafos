@@ -13,7 +13,6 @@ class Graph:
         self.arestas.append((origem, destino, peso))
         self.adjacencyList[origem].append((destino, peso))
         self.adjacencyList[destino].append((origem, peso))
-        
 
     def getVerticesNumber(self):
         return len(self.adjacencyList)
@@ -41,16 +40,16 @@ class Graph:
 
     def getPeso(self, origem, destino):
         for aresta in self.arestas:
-            if (aresta[0] == origem and aresta[1] == destino) or (aresta[0] == destino and aresta[1] == origem):
+            if (aresta[0] == origem and aresta[1] == destino) or (
+                aresta[0] == destino and aresta[1] == origem
+            ):
                 return aresta[2]
         return None
 
     def getGrauMinimo(self):
-        grauMinimo = float('inf')
+        grauMinimo = float("inf")
         for vertice in self.adjacencyList:
             grau = len(self.adjacencyList[vertice])
             if grau < grauMinimo:
                 grauMinimo = grau
         return grauMinimo
-    
-    
