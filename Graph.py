@@ -26,7 +26,7 @@ class Digraph:
         # adiciona a aresta a lista de arestas
         self.arestas.append((origem, destino, peso))
 
-        # adiciona a aresta a lista de adjacência, adicionando o destino na origem.
+        # adiciona a aresta a lista de adjacência, adicionando o destino na origem e a origem no destino.
         self.adjacencyList[origem].append((destino, peso))
         self.adjacencyList[destino].append((origem, peso))
 
